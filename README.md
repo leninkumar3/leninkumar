@@ -4,71 +4,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey Form</title>
   <style>
-    .survey {
-      position: relative;
-      font-size: 70px;
-      text-align: center;
+    body {
+      background-color: #333;
+      color: #fff;
+      font-family: Arial, sans-serif;
     }
-    body{
-      background-image: url("sushpal.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
+ form {
+      max-width: 400px;
+      margin: 50px auto;
     }
-    #yellow {
-      background-color :beige;
+  label {
+      display: block;
+      margin-bottom: 8px;
     }
-    h3 {
-      position: relative;
-      top: 18px;
-      left: 5px;
+input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
     }
-    .outer {
-      width: 50%;
-      background-color: rgba(40, 36, 36, 0.508);
-      position: relative;
-      left: 25%;
-      float: left;
+ input[type="submit"] {
+      background-color: #4CAF50;
+      color: #fff;
+      cursor: pointer;
     }
-    div h1 {
-      text-align: center;
-      font-size: 2.5rem;
-    }
-    .form {
-      padding: 50px;
-      font-size: 1.5rem;
-      color: antiquewhite;
+ input[type="submit"]:hover {
+      background-color: #45a049;
     }
   </style>
-  <title>Document</title>
 </head>
 <body>
-  <h1 class="survey">Survey Form Of NIT kkr</h1>
-  <div class="outer"> 
-    <form class="form">
-      <h1>Fill Your Details</h1>
-      <h3>Name</h3>
-      <label><input id="yellow" type="text"></label> <br> <br>
-      Last Name: 
-      <input id="yellow" type="text"> <br> <br>
-      Age: <br>
-      <input id="yellow" type="text"> <br> <br>
-      Grade: <br>
-      <input id="yellow" type="text"> <br> <br>
-      <label for="username">Username:</label>
-      <input id="yellow" type="text" id="username" name="username"> <br> <br>
-      comments: <br>
-      <textarea id="yellow" name="comments" rows="4" cols="50"></textarea>
-      <br> <br>
-      <input type="date" name="" id=""> <br> <br>
-      Course <br>
-      <input type="checkbox">-Maths
-      <input type="checkbox">-science
-      <input type="checkbox">-History
-      <br> <br>
-      <input  type="submit"> -
-      <br> <br>
-    </form>  
-  </div>
-  </body>
+
+  <form id="surveyForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+  <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required>
+
+   <label for="gender">Gender:</label>
+    <select id="gender" name="gender" required>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+   <option value="other">Other</option>
+  </select>
+
+   <label for="qualification">Qualification:</label>
+   <input type="text" id="qualification" name="qualification" required>
+
+   <label for="occupation">Occupation:</label>
+   <input type="text" id="occupation" name="occupation" required>
+
+   <label for="address">Address:</label>
+   <textarea id="address" name="address" rows="4" required></textarea>
+
+   <label for="feedback">Feedback:</label>
+  <textarea id="feedback" name="feedback" rows="4" required></textarea>
+  <input type="submit" value="Submit">
+  </form>
+
+  <script>
+    document.getElementById("surveyForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+    });
+  </script>
+
+</body>
 </html>
+ ⁠
